@@ -1,3 +1,7 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+//import '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js';
+
 import * as React from "react";
 import { Button, ButtonType } from "office-ui-fabric-react";
 import Header from "./Header";
