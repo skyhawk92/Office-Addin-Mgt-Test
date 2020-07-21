@@ -1,6 +1,11 @@
+import '../../../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js';
+
+import {Providers, MsalProvider, LoginType} from '@microsoft/mgt';
+import { PeoplePicker, Login } from '@microsoft/mgt-react';
+
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
-//import '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js';
+import 'webcomponentsjs/webcomponents-bundle.js';
 
 import * as React from "react";
 import { Button, ButtonType } from "office-ui-fabric-react";
@@ -13,9 +18,6 @@ import * as outlook from "./Outlook.App";
 import * as powerpoint from "./PowerPoint.App";
 import * as project from "./Project.App";
 import * as word from "./Word.App";
-import '@microsoft/mgt';
-import { PeoplePicker, Login } from 'mgt-react';
-import {  Providers, MsalProvider, LoginType } from '@microsoft/mgt';
 /* global Button, Header, HeroList, HeroListItem, Office */
 
 export interface AppProps {
