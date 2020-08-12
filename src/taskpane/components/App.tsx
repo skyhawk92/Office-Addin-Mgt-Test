@@ -5,7 +5,6 @@ import { PeoplePicker, Login } from '@microsoft/mgt-react';
 
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
-import 'webcomponentsjs/webcomponents-bundle.js';
 
 import * as React from "react";
 import { Button, ButtonType } from "office-ui-fabric-react";
@@ -18,6 +17,8 @@ import * as outlook from "./Outlook.App";
 import * as powerpoint from "./PowerPoint.App";
 import * as project from "./Project.App";
 import * as word from "./Word.App";
+import axios from 'axios';
+import qs = require('qs');
 /* global Button, Header, HeroList, HeroListItem, Office */
 
 export interface AppProps {
@@ -43,7 +44,26 @@ export default class App extends React.Component<AppProps, AppState> {
     });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+
+    const url = 'https://login.microsoftonline.com/6785298f-e857-464b-9b4b-807178402632/oauth2/v2.0/token';
+    const data = qs.stringify({
+      grant_type: 'client_credentials',
+      client_id: '9b154016-8b25-4923-b167-a2ac52c68017',
+      client_secret: '',
+      scope: 'https://graph.microsoft.com/.default'
+    });
+     const [response] = await Promise.all([
+      axios.post(url,
+        data,
+        {
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+      })
+    ]);
+    console.log("RESPONSE:", response);
+
     this.setState({
       listItems: [
         {
