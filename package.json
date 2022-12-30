@@ -73,7 +73,7 @@
     "html-webpack-plugin": "^4.3.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "mocha": "^7.1.1",
+    "mocha": "^10.2.0",
     "office-addin-cli": "^1.0.10",
     "office-addin-debugging": "^3.0.31",
     "office-addin-dev-certs": "^1.5.2",
